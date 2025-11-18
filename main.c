@@ -33,10 +33,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-int main(void)
-{
-    _printf("Let's try to printf a simple sentence.\n");
-    _printf("Character:[%c]\n", 'H');
-    return (0);
-}
