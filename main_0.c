@@ -1,5 +1,12 @@
 #include "main.h"
 
+
+/**
+ * _printf - our  printf function
+ * @*format: the format we need to work with in the string
+ * @...: the text
+ * Return: returns the count back to us
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
