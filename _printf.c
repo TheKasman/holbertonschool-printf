@@ -19,6 +19,10 @@ int _printf(const char *format, ...)
 		if (format[length] == '%')
 		{
 			length++;
+			if(format[length] == '\0')
+			{
+				break;
+			}
 			count += getType(format[length], args);
 		}
 		else
