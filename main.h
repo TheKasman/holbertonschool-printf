@@ -2,12 +2,13 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...);
 
-void printString(); /*These will probably take in the ... based on a switch case*/
-void printChar();
+int printString(char *value, int *counter);
+int printChar(char *text);
 void printPercent();
-
 
 #endif
