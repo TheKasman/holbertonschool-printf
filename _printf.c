@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 			length++;
 			if(format[length] == '\0')
 			{
-				break;
+				va_end(args);
+				return (-1);
 			}
 			count += getType(format[length], args);
 		}
