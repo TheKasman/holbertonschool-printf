@@ -7,6 +7,7 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
+int  getType(char letter, va_list args);
+int printString(va_list args);
 
-int  getType(char *letter, ...);
 #endif
