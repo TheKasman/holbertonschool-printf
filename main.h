@@ -4,11 +4,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 
-int printString(char *value, int *counter);
-int printChar(char *text);
-void printPercent();
-
+int  getType(char *letter, ...);
 #endif
