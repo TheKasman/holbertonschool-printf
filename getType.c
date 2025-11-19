@@ -21,6 +21,10 @@ int getType(char letter, va_list args)
 			return (printString(args));
 		case '%':
 			return (write(1, "%", 1));
+		case 'd':
+			return (printInt(args));
+		case 'i':
+			return (printInt(args));
 
 		default:
 			write(1, "%", 1);
