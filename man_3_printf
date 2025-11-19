@@ -18,6 +18,8 @@ The _printf function produces output according to a format string.
 
 %% - Prints a % sign
 
+%b - Prints an unsigned int (any positive number) as binary
+
 .SH IMPLEMENTATION
 .TP
 The way to use this function, basically works exactly the same way you would use printf().
