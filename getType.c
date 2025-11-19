@@ -25,7 +25,8 @@ int getType(char letter, va_list args)
 			return (printInt(args));
 		case 'i':
 			return (printInt(args));
-
+		case 'b':
+			return (printBin(args));
 		default:
 			write(1, "%", 1);
 			write(1, &letter, 1);

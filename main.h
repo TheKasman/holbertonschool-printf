@@ -10,5 +10,6 @@ int _printf(const char *format, ...);
 int  getType(char letter, va_list args);
 int printString(va_list args);
 int printInt(va_list args);
+int printBin(va_list args);
 
 #endif
