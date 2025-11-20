@@ -25,7 +25,6 @@ int printOct(va_list args)
 	{
 		buffer[i++] = (num % 8) + '0';
 		num /= 8;
-		i *= 10;
 	}
 
 	/*print it all out*/

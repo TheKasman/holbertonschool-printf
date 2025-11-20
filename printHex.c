@@ -44,7 +44,6 @@ int print_HEX(va_list args)
 				break;
 		}
 		num /= 16;
-		i *= 10;
 	}
 
 	/*print it all out*/
@@ -100,7 +99,6 @@ int print_hex(va_list args)
 				break;
 		}
 		num /= 16;
-		i *= 10;
 	}
 
 	/*print it all out*/
