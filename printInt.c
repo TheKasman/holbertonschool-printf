@@ -28,7 +28,7 @@ int printInt(char *buff, va_list args)
 	/*gets the numbers from left to right*/
 	while (n > 0)
 	{
-		temp[i++] = (n % 10) + '0';
+		temp[j++] = (n % 10) + '0';
 		n /= 10;
 	}
 	while (j > 0)
