@@ -27,7 +27,7 @@ int print_HEX(va_list args)
 	}
 
 	/*print it all out*/
-	write(1, &buffer, count);
+	write(1, buffer, count);
 	return (count);
 }
 
@@ -60,6 +60,6 @@ int print_hex(va_list args)
 	}
 
 	/*print it all out*/
-	write(1, &buffer, count);
+	write(1, buffer, count);
 	return (count);
 }

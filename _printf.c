@@ -9,6 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
+	char buffer[1024];
 	va_list args;
 	int length = 0, count = 0;
 
@@ -28,11 +29,13 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			write(1, &format[length], 1);
+			buffer[length] = format[length];
 			count++;
+			length++;
 		}
-		length++;
 	}
+
+	write(1, buffer, count);
 
 	va_end(args);
 	return (count);
