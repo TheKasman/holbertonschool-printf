@@ -11,7 +11,7 @@ int print_HEX(va_list args)
 	unsigned int num = va_arg(args, int);
 	char buffer[32]; /*handling 32bit ints*/
 	int i = 0, count = 0;
-
+ 	char *hex = "0123456789ABCDEF";
 	if (num == 0)
 	{
 		write(1, "0", 1);
@@ -19,30 +19,9 @@ int print_HEX(va_list args)
 	}
 
 	/*now convert to Base16 - HEXADECIMAL*/
-
 	while (num != 0)
 	{
-		switch ((num % 16) * i)
-		{
-			case 10:
-				buffer[i++] += 'A';
-				break;
-			case 11:
-				buffer[i++] += 'B';
-				break;
-			case 12:
-				buffer[i++] += 'C';
-				break;
-			case 13:
-				buffer[i++] += 'D';
-				break;
-			case 14:
-				buffer[i++] += 'E';
-				break;
-			case 15:
-				buffer[i++] += 'F';
-				break;
-		}
+        	buffer[i++] = hex[num % 16];
 		num /= 16;
 	}
 
@@ -67,6 +46,7 @@ int print_hex(va_list args)
 	char buffer[32]; /*handling 32bit ints*/
 	int i = 0, count = 0;
 
+ 	char *hex = "0123456789abcdef";
 	if (num == 0)
 	{
 		write(1, "0", 1);
@@ -77,27 +57,7 @@ int print_hex(va_list args)
 
 	while (num != 0)
 	{
-		switch ((num % 16) * i)
-		{
-			case 10:
-				buffer[i++] += 'a';
-				break;
-			case 11:
-				buffer[i++] += 'b';
-				break;
-			case 12:
-				buffer[i++] += 'c';
-				break;
-			case 13:
-				buffer[i++] += 'd';
-				break;
-			case 14:
-				buffer[i++] += 'e';
-				break;
-			case 15:
-				buffer[i++] += 'f';
-				break;
-		}
+		buffer[i++] = hex[num % 16];
 		num /= 16;
 	}
 
