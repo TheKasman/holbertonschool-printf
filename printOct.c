@@ -10,7 +10,8 @@ int printOct(va_list args)
 {
 	unsigned int num = va_arg(args, int);
 	char buffer[32]; /*handling 32bit ints*/
-	int i = 0, count = 0;
+	int i = 0;
+	int count = 0;
 
 	if (num == 0)
 	{
@@ -22,7 +23,7 @@ int printOct(va_list args)
 
 	while (num != 0)
 	{
-		buffer[i++] += (num % 8) * i;
+		buffer[i++] = (num % 8) + '0';
 		num /= 8;
 		i *= 10;
 	}

@@ -24,24 +24,24 @@ int print_HEX(va_list args)
 	{
 		switch ((num % 16) * i)
 		{
-			case '10':
+			case 10:
 				buffer[i++] += 'A';
-				break:
-			case '11':
+				break;
+			case 11:
 				buffer[i++] += 'B';
-				break:
-			case '12':
+				break;
+			case 12:
 				buffer[i++] += 'C';
-				break:
-			case '13':
+				break;
+			case 13:
 				buffer[i++] += 'D';
-				break:
-			case '14':
+				break;
+			case 14:
 				buffer[i++] += 'E';
-				break:
-			case '15':
+				break;
+			case 15:
 				buffer[i++] += 'F';
-				break:
+				break;
 		}
 		num /= 16;
 		i *= 10;
@@ -80,24 +80,24 @@ int print_hex(va_list args)
 	{
 		switch ((num % 16) * i)
 		{
-			case '10':
+			case 10:
 				buffer[i++] += 'a';
-				break:
-			case '11':
+				break;
+			case 11:
 				buffer[i++] += 'b';
-				break:
-			case '12':
+				break;
+			case 12:
 				buffer[i++] += 'c';
-				break:
-			case '13':
+				break;
+			case 13:
 				buffer[i++] += 'd';
-				break:
-			case '14':
+				break;
+			case 14:
 				buffer[i++] += 'e';
-				break:
-			case '15':
+				break;
+			case 15:
 				buffer[i++] += 'f';
-				break:
+				break;
 		}
 		num /= 16;
 		i *= 10;
