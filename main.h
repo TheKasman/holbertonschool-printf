@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...);
 int  getType(char letter, char *buff, va_list args);
-int printString(va_list args);
+int printString(char *buff, va_list args);
 int printInt(char *buff, va_list args);
 int printBin(char *buff, va_list args);
 int printUInt(char *buff, va_list args);
