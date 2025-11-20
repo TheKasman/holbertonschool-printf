@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	char buffer[1024];
 	va_list args;
-	int length = 0, count = 0;
+	int length = 0, count = 0, buf_index = 0;
 
 	va_start(args, format);
 
@@ -25,18 +25,19 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			count += getType(format[length], args);
+			buf_index += getType(format[length],
+					&buffer[buf_index], args);
 		}
 		else
 		{
-			buffer[length] = format[length];
-			count++;
-			length++;
+			buffer[buf_index++] = format[length];
 		}
+		length++;
 	}
 
-	write(1, buffer, count);
+	write(1, buffer, buf_index);
 
+	count = buf_index;
 	va_end(args);
 	return (count);
 }

@@ -6,29 +6,28 @@
  * Return: returns the number
  */
 
-int printOct(va_list args)
+int printOct(char *buff, va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[1024]; /*handling 32bit ints*/
-	int i = 0;
-	int count = 0;
+	int i = 0, j = 0;
+	char temp[20];
 
 	if (num == 0)
 	{
-		write(1, "0", 1);
-		return (1);
+		buff[i++] = '0';
+		return (i);
 	}
 
 	/*now convert to octal (base8)*/
 
 	while (num != 0)
 	{
-		buffer[i++] = (num % 8) + '0';
+		temp[j++] = (num % 8) + '0';
 		num /= 8;
-		count++;
 	}
 
 	/*print it all out*/
-	write(1, buffer, count);
-	return (count);
+	while(j > 0)
+		buff[i++] = temp[--j];
+	return (i);
 }

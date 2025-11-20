@@ -6,35 +6,35 @@
  * Return: number of characters printed
  */
 
-int printInt(va_list args)
+int printInt(char *buff, va_list args)
 {
 	int num = va_arg(args, int);
-	char buffer[1024]; /*the BEEEG BUFFER*/
-	int i = 0, count = 0;
+	int i = 0, j = 0; /*loops*/
+	char temp[20]; /*temporary buffer*/
 	long n = num;
 
 	if (num == 0)
 	{
-		write(1, "0", 1);
-		return (1);
+		buff[i++] = '0';
+		return (i);
 	}
 
 	if (num < 0)
 	{
-		buffer[i++] = '-';
-		count++;
+		buff[i++] = '-';
 		n = -n;
 	}
 
 	/*gets the numbers from left to right*/
 	while (n > 0)
 	{
-		buffer[i++] = (n % 10) + '0';
+		buff[i++] = (n % 10) + '0';
 		n /= 10;
-		count++;
 	}
-
+	while (j > 0)
+	{
+		buff[i++] = temp[--j];
+	}
 	/*print the numbers left to right*/
-	write(1, buffer, count);
-	return (count);
+	return (i);
 }

@@ -6,28 +6,28 @@
  * Return: returns the number
  */
 
-int printBin(va_list args)
+int printBin(char *buff, va_list args)
 {
-	unsigned int num = va_arg(args, int);
-	char buffer[1024]; /*handling 32bit ints*/
-	int i = 0, count = 0;
+	unsigned int num = va_arg(args, unsigned int);
+	char temp[32]; /*handling 32bit ints*/
+	int i = 0, j = 0;
 
 	if (num == 0)
 	{
-		write(1, "0", 1);
-		return (1);
+		buff[i++] = '0';
+		return (i);
 	}
 
 	/*do binary math until we can't*/
 	while (num > 0)
 	{
 		/*add 1 or 0 to binary*/
-		buffer[i++] = (num & 1) ? '1' : '0';
+		buff[i++] = (num & 1) ? '1' : '0';
 		num >>= 1;
-		count++;
 	}
 
 	/*print it all out*/
-	write(1, &buffer[i], count);
-	return (count);
+	while (j > 0)
+		buff[i++] = temp[--j];
+	return (i);
 }

@@ -8,7 +8,7 @@
  */
 
 
-int getType(char letter, va_list args)
+int getType(char letter, char *buff, va_list args)
 {
 	char c;
 
@@ -22,19 +22,19 @@ int getType(char letter, va_list args)
 		case '%':
 			return (write(1, "%", 1));
 		case 'd':
-			return (printInt(args));
+			return (printInt(buff, args));
 		case 'i':
-			return (printInt(args));
+			return (printInt(buff, args));
 		case 'b':
-			return (printBin(args));
+			return (printBin(buff, args));
 		case 'u':
-			return (printUInt(args));
+			return (printUInt(buff, args));
 		case 'o':
-			return (printOct(args));
+			return (printOct(buff, args));
 		case 'x':
-			return (print_hex(args));
+			return (print_hex(buff, args));
 		case 'X':
-			return (print_HEX(args));
+			return (print_HEX(buff, args));
 		default:
 			write(1, "%", 1);
 			write(1, &letter, 1);

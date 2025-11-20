@@ -2,33 +2,37 @@
 
 /**
  * printUInt - prints an integer (%d or %i)
+ * @buff: the buffer
  * @args: argument list
  * Return: number of characters printed
  */
 
-int printUInt(va_list args)
+int printUInt(char *buff, va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[1024]; /* enough for 32-bit int */
-	int i = 0, count = 0;
+	int i = 0, j = 0;
+	char temp[20];
 	long n = num;
 
 	if (num == 0)
 	{
-		write(1, "0", 1);
-		return (1);
+		buff[i++] = '0';
+		return (i);
 	}
 
 
 	/*gets the numbers from left to right*/
 	while (n > 0)
 	{
-		buffer[i++] = (n % 10) + '0';
+		buff[i++] = (n % 10) + '0';
 		n /= 10;
-		count++;
 	}
 
+
 	/*print the numbers left to right*/
-	write(1, buffer, count);
-	return (count);
+	while (j > 0)
+	{
+		buff[i++] = temp[--j];
+	}
+	return (i);
 }
