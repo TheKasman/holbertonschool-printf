@@ -27,6 +27,14 @@ int getType(char letter, va_list args)
 			return (printInt(args));
 		case 'b':
 			return (printBin(args));
+		case 'u':
+			return (printUInt(args));
+		case 'o':
+			return (printOct(args));
+		case 'x':
+			return (print_hex(args));
+		case 'X':
+			return (print_HEX(args));
 		default:
 			write(1, "%", 1);
 			write(1, &letter, 1);
