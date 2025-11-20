@@ -6,7 +6,7 @@
  * Return: returns the length of the string
  */
 
-int printString(va_list args)
+int printString(char *buff, va_list args)
 {
 	char *str = va_arg(args, char *);
 	int length = 0;
@@ -15,8 +15,9 @@ int printString(va_list args)
 		str = "(null)";
 
 	while (str[length])
+	{
+		buff[length] = str[length];
 		length++;
-
-	write(1, str, length);
+	}
 	return (length);
 }

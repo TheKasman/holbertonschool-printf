@@ -10,19 +10,18 @@
 
 int getType(char letter, char *buff, va_list args)
 {
-	char c;
 
 	switch (letter)
 	{
 		case 'c':
-			c = (char)va_arg(args, int);
-			return (write(1, &c, 1));
+			buff[0] = (char)va_arg(args, int);
+			return (1);
 		case 's':
-			return (printString(args));
+			return (printString(buff, args));
 		case '%':
-			return (write(1, "%", 1));
+			buff[0] = '%';
+			return (1);
 		case 'd':
-			return (printInt(buff, args));
 		case 'i':
 			return (printInt(buff, args));
 		case 'b':
@@ -36,8 +35,8 @@ int getType(char letter, char *buff, va_list args)
 		case 'X':
 			return (print_HEX(buff, args));
 		default:
-			write(1, "%", 1);
-			write(1, &letter, 1);
+			buff[0] = '%';
+			buff[1] = letter;
 			return (2);
 	}
 }
