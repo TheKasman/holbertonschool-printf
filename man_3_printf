@@ -16,6 +16,14 @@ The _printf function produces output according to a format string.
 
 %i - Prints out an integer in base 10
 
+%u - Prints out an unsigned decimal integer
+
+%o - Prints out a decimal in base 8
+
+%x - Prints out a decimal in base 16 ( Lowercase ) 
+
+%X - Prints out a decimal in base 16 ( Uppercase )
+
 %% - Prints a % sign
 
 %b - Prints an unsigned int (any positive number) as binary
