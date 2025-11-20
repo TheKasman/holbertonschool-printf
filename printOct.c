@@ -29,6 +29,6 @@ int printOct(va_list args)
 	}
 
 	/*print it all out*/
-	write(1, &buffer, count);
+	write(1, buffer, count);
 	return (count);
 }

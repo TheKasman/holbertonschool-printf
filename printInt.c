@@ -35,6 +35,6 @@ int printInt(va_list args)
 	}
 
 	/*print the numbers left to right*/
-	write(1, &buffer, count);
+	write(1, buffer, count);
 	return (count);
 }
