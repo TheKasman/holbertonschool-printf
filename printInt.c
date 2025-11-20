@@ -21,7 +21,7 @@ int printInt(va_list args)
 
 	if (num < 0)
 	{
-		buffer[i++] = "-";
+		buffer[i++] = '-';
 		count++;
 		n = -n;
 	}

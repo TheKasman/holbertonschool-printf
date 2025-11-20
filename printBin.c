@@ -9,7 +9,7 @@
 int printBin(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer1[1024]; /*handling 32bit ints*/
+	char buffer[1024]; /*handling 32bit ints*/
 	int i = 0, count = 0;
 
 	if (num == 0)
