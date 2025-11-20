@@ -9,7 +9,7 @@
 int printOct(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[32]; /*handling 32bit ints*/
+	char buffer[1024]; /*handling 32bit ints*/
 	int i = 0;
 	int count = 0;
 
@@ -25,13 +25,10 @@ int printOct(va_list args)
 	{
 		buffer[i++] = (num % 8) + '0';
 		num /= 8;
+		count++;
 	}
 
 	/*print it all out*/
-	while (i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
+	write(1, &buffer, count);
 	return (count);
 }

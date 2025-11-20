@@ -9,7 +9,7 @@
 int printBin(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[32]; /*handling 32bit ints*/
+	char buffer1[1024]; /*handling 32bit ints*/
 	int i = 0, count = 0;
 
 	if (num == 0)
@@ -24,13 +24,10 @@ int printBin(va_list args)
 		/*add 1 or 0 to binary*/
 		buffer[i++] = (num & 1) ? '1' : '0';
 		num >>= 1;
+		count++;
 	}
 
 	/*print it all out*/
-	while (i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
+	write(1, &buffer[i], count);
 	return (count);
 }

@@ -9,7 +9,7 @@
 int printInt(va_list args)
 {
 	int num = va_arg(args, int);
-	char buffer[20]; /* enough for 32-bit int */
+	char buffer[1024]; /*the BEEEG BUFFER*/
 	int i = 0, count = 0;
 	long n = num;
 
@@ -21,7 +21,7 @@ int printInt(va_list args)
 
 	if (num < 0)
 	{
-		write(1, "-", 1);
+		buffer[i++] = "-";
 		count++;
 		n = -n;
 	}
@@ -31,13 +31,10 @@ int printInt(va_list args)
 	{
 		buffer[i++] = (n % 10) + '0';
 		n /= 10;
+		count++;
 	}
 
 	/*print the numbers left to right*/
-	while (i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
+	write(1, &buffer, count);
 	return (count);
 }

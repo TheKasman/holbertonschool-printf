@@ -9,7 +9,7 @@
 int print_HEX(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[32]; /*handling 32bit ints*/
+	char buffer[1024]; /*handling 32bit ints*/
 	int i = 0, count = 0;
  	char *hex = "0123456789ABCDEF";
 	if (num == 0)
@@ -23,14 +23,11 @@ int print_HEX(va_list args)
 	{
         	buffer[i++] = hex[num % 16];
 		num /= 16;
+		count++;
 	}
 
 	/*print it all out*/
-	while (i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
+	write(1, &buffer, count);
 	return (count);
 }
 
@@ -43,7 +40,7 @@ int print_HEX(va_list args)
 int print_hex(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-	char buffer[32]; /*handling 32bit ints*/
+	char buffer[1024]; /*handling 32bit ints*/
 	int i = 0, count = 0;
 
  	char *hex = "0123456789abcdef";
@@ -59,13 +56,10 @@ int print_hex(va_list args)
 	{
 		buffer[i++] = hex[num % 16];
 		num /= 16;
+		count++;
 	}
 
 	/*print it all out*/
-	while (i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
+	write(1, &buffer, count);
 	return (count);
 }
