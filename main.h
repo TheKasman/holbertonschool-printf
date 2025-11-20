@@ -7,14 +7,14 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-int  getType(char letter, va_list args);
+int  getType(char letter, char *buff, va_list args);
 int printString(va_list args);
-int printInt(va_list args);
-int printBin(va_list args);
-int printUInt(va_list args);
-int printOct(va_list args);
-int print_HEX(va_list args);
-int print_hex(va_list args);
+int printInt(char *buff, va_list args);
+int printBin(char *buff, va_list args);
+int printUInt(char *buff, va_list args);
+int printOct(char *buff, va_list args);
+int print_HEX(char *buff, va_list args);
+int print_hex(char *buff, va_list args);
 
 
 #endif
