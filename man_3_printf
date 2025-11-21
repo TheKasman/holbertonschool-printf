@@ -28,6 +28,10 @@ The _printf function produces output according to a format string.
 
 %b - Prints an unsigned int (any positive number) as binary
 
+%S - Prints the string of text using printable ascii characters.
+     Anything that isn't a printable ascii character will instead print a 
+     hexadecimal code for 2 digits (\\xXX)
+
 .SH IMPLEMENTATION
 .TP
 The way to use this function, basically works exactly the same way you would use printf().
