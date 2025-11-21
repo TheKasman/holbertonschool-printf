@@ -40,7 +40,7 @@ int printSuper(char *buff, va_list args)
 		{
 			buff[i++] = '\\';
 			buff[i++] = 'x';
-			i += print_2BHex(buff + i, str[i]);
+			i += print_2BHex(buff + i, c);
 		}
 		j++;
 	}
