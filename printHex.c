@@ -22,7 +22,7 @@ int print_HEX(char *buff, va_list args)
 	/*now convert to Base16 - HEXADECIMAL*/
 	while (num != 0)
 	{
-        	tmp[i++] = hex[num % 16];
+        	tmp[j++] = hex[num % 16];
 		num /= 16;
 	}
 
@@ -57,7 +57,7 @@ int print_hex(char *buff, va_list args)
 
 	while (num != 0)
 	{
-		tmp[i++] = hex[num % 16];
+		tmp[j++] = hex[num % 16];
 		num /= 16;
 	}
 
@@ -65,4 +65,20 @@ int print_hex(char *buff, va_list args)
 	while (j > 0)
 		buff[i++] = tmp[--j];
 	return (i);
+}
+
+/**
+ * print_2BHex - prints the two hexadecimals for %S
+ * @buff: the buffer
+ * @c: the character we're converting
+ */
+
+int print_2BHex(char *buff, unsigned char c)
+{
+    char *hex = "0123456789ABCDEF";
+
+    buff[0] = hex[c / 16];
+    buff[1] = hex[c % 16];
+
+    return 2;
 }
