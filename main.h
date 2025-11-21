@@ -17,5 +17,7 @@ int print_HEX(char *buff, va_list args);
 int print_hex(char *buff, va_list args);
 int print_2BHex(char *buff, unsigned char c);
 int printSuper(char *buff, va_list args);
+int printPointer(char *buff, va_list args); /* PAV Added new Printerpointer  */
+
 
 #endif

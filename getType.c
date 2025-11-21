@@ -29,6 +29,9 @@ int getType(char letter, char *buff, va_list args)
 		case 'x': return (print_hex(buff, args));
 		case 'X': return (print_HEX(buff, args));
 		case 'S': return (printSuper(buff, args));
+	        case 'p': return (printPointer(buff, args)); /*  PAV  pointer conversion specifier  */  
+
+		  
 		default:
 			buff[0] = '%';
 			buff[1] = letter;
